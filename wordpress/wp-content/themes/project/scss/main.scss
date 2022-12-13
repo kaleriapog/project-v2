@@ -4,11 +4,6 @@ body {
   color: $colorMain;
   font-size: 18px;
   line-height: 1.5;
-  padding-top: 88px;
-
-  @include media-laptop {
-    padding-top: 80px;
-  }
 
   &.not-scroll {
     height: 100vh;
@@ -62,6 +57,18 @@ section {
   line-height: 1.37;
   color:$colorButton;
   transition: $transitionMain;
+
+  &:hover {
+    border-color: $colorButton;
+    color: inherit;
+  }
+}
+
+.main-button-small {
+  padding: 12px 18px;
+  font-size: 14px;
+  line-height: 1.42;
+
 
   &:hover {
     border-color: $colorButton;

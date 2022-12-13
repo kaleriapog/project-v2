@@ -1,9 +1,4 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
   background-color: $colorWhite;
 
   &__inner {
@@ -12,6 +7,12 @@
     gap: 20px;
     align-items: center;
     padding: 20px 0;
+  }
+
+  .button-block {
+    display: flex;
+    gap: 18px;
+    align-items: center;
   }
 
   &__button {
@@ -68,20 +69,20 @@
   .button-block-mobile {
     display: none;
 
-    @include media-laptop {
+    @include media-tablet {
       display: block;
     }
   }
 
   .button-block-desktop {
 
-    @include media-laptop {
+    @include media-tablet {
       display: none;
     }
   }
 
   .main-nav {
-    @include media-laptop {
+    @include media-tablet {
       position: absolute;
       z-index: 100;
       top: 100%;
@@ -92,12 +93,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 30px;
       padding: 30px 20px 60px;
       clip-path: inset(0 0 0 100%);
       transition: $transitionMain;
       overflow: scroll;
+      top: 80px;
     }
 
     @include media-mobile {
@@ -127,7 +129,7 @@
   position: relative;
   display: none;
 
-  @include media-laptop {
+  @include media-tablet {
     display: block;
   }
 }

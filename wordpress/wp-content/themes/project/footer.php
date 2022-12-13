@@ -27,29 +27,6 @@ $button_color_footer = get_field('color_button_footer', 'options');
                             ?>
 
                         </div>
-                        <div class="button-block button-block-mobile">
-
-                            <?php if(!empty($button_color_footer) && !empty($button_footer)) : ?>
-
-                                <div class="button__wrapper">
-
-                                    <?php insertButton($button_footer, 'footer_button main-button main-button-color'); ?>
-
-                                </div>
-
-                            <?php endif ?>
-
-                            <?php if(empty($button_color_footer) && !empty($button_footer)) : ?>
-
-                                <div class="">
-
-                                    <?php insertButton($button_footer, 'footer__button main-button'); ?>
-
-                                </div>
-
-                            <?php endif ?>
-
-                        </div>
                     </div>
                     <div class="footer__right">
 

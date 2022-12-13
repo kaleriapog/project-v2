@@ -132,14 +132,15 @@ $link_simple = get_field('link_simple', $post->ID);
                 <?php
                     foreach ($logos as $item) :
                         $image = $item['logo'];
+                        $image_link = $item['link_logo'];
                 ?>
 
                 <li class="hero__logos-item">
-                    <div class="hero__logos-item-image">
+                    <a class="hero__logos-item-image" href="<?php echo $image_link;  ?>">
 
                         <?php insertImage($image, 'image'); ?>
 
-                    </div>
+                    </a>
                 </li>
 
                 <?php endforeach ?>
@@ -215,6 +216,9 @@ $link_simple = get_field('link_simple', $post->ID);
                     $color = $item['color_interactive'];
                     $color_bg = $item['color_background_block_interactive'];
                     $dots = $item['dots'];
+                    $link_interactive = $item['link_interactive'];
+                    $button_interactive = $item['button_interactive'];
+
                     ?>
 
                 <li class="section-interactive__item interactive-item-<?php echo $key ?>" style="z-index: <?php echo 50 - $key ?>; background-color: <?php echo $color_bg ?>;">
@@ -233,6 +237,24 @@ $link_simple = get_field('link_simple', $post->ID);
                                     <div class="subtitle">
 
                                         <?php echo $subtitle; ?>
+
+                                    </div>
+
+                                <?php endif ?>
+                                <?php if ( !empty($button_interactive)) : ?>
+
+                                    <div class="button-group">
+
+                                        <?php insertButton($button_interactive, 'main-button main-button-small'); ?>
+
+                                    </div>
+
+                                <?php endif ?>
+                                <?php if ( !empty($link_interactive)) : ?>
+
+                                    <div class="link-group">
+
+                                        <?php insertButton($link_interactive, 'link-interactive'); ?>
 
                                     </div>
 

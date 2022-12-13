@@ -9,9 +9,7 @@
  * @package project
  */
 
-$button_header = get_field('link', 'options');
-$button_color = get_field('color_button', 'options');
-
+$buttons_header = get_field('buttons_header', 'options');
 ?>
 
 <!doctype html>
@@ -39,66 +37,77 @@ $button_color = get_field('color_button', 'options');
                     ?>
                 </div><!-- .site-branding -->
 
-                <nav id="site-navigation" class="main-nav">
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'main-menu',
-                            'menu_id'        => 'primary-menu',
-                            'menu_class'      => 'header__menu'
-                        )
-                    );
-                    ?>
+<!--                <nav id="site-navigation" class="main-nav">-->
+<!--                    --><?php
+//                    wp_nav_menu(
+//                        array(
+//                            'theme_location' => 'main-menu',
+//                            'menu_id'        => 'primary-menu',
+//                            'menu_class'      => 'header__menu'
+//                        )
+//                    );
+//                    ?>
+<!---->
+<!--                     <div class="button-block button-block-mobile">-->
+<!---->
+<!--                        --><?php //if(!empty($button_color) && !empty($button_header)) : ?>
+<!---->
+<!--                            <div class="button__wrapper">-->
+<!---->
+<!--                                --><?php //insertButton($button_header, 'header__button main-button main-button-color'); ?>
+<!---->
+<!--                            </div>-->
+<!---->
+<!--                        --><?php //endif ?>
+<!---->
+<!--                        --><?php //if(empty($button_color) && !empty($button_header)) : ?>
+<!---->
+<!--                            <div>-->
+<!---->
+<!--                                --><?php //insertButton($button_header, 'header__button main-button'); ?>
+<!---->
+<!--                            </div>-->
+<!---->
+<!--                        --><?php //endif ?>
+<!---->
+<!--                     </div>-->
+<!--                </nav>-->
+                <div class="menu-icon-wrapper"><div class="menu-icon"><span></span></div></div>
+                <div id="site-navigation" class="button-block button-block-desktop main-nav">
 
-                     <div class="button-block button-block-mobile">
+                    <?php if(!empty($buttons_header)) : ?>
 
-                        <?php if(!empty($button_color) && !empty($button_header)) : ?>
+                        <?php
+                        foreach ($buttons_header as $item) :
+                            $button_header = $item['link'];
+                            $button_color = $item['color_button'];
 
-                            <div class="button__wrapper">
+                        ?>
+                            <?php if(!empty($button_color) && !empty($button_header)) : ?>
 
-                                <?php insertButton($button_header, 'header__button main-button main-button-color'); ?>
+                                <div class="button__wrapper">
 
-                            </div>
+                                    <?php insertButton($button_header, 'header__button main-button main-button-color'); ?>
 
-                        <?php endif ?>
+                                </div>
 
-                        <?php if(empty($button_color) && !empty($button_header)) : ?>
+                            <?php endif ?>
 
-                            <div>
+                            <?php if(empty($button_color) && !empty($button_header)) : ?>
 
-                                <?php insertButton($button_header, 'header__button main-button'); ?>
+                                <div class="monitor-section__image">
 
-                            </div>
+                                    <?php insertButton($button_header, 'header__button main-button'); ?>
 
-                        <?php endif ?>
+                                </div>
 
-                     </div>
-                </nav><!-- #site-navigation -->
-                <div class="button-block button-block-desktop">
+                            <?php endif ?>
 
-                    <?php if(!empty($button_color) && !empty($button_header)) : ?>
-
-                        <div class="button__wrapper">
-
-                            <?php insertButton($button_header, 'header__button main-button main-button-color'); ?>
-
-                        </div>
-
-                    <?php endif ?>
-
-                    <?php if(empty($button_color) && !empty($button_header)) : ?>
-
-                        <div class="monitor-section__image">
-
-                            <?php insertButton($button_header, 'header__button main-button'); ?>
-
-                        </div>
+                        <?php endforeach ?>
 
                     <?php endif ?>
 
                 </div>
-
-                <div class="menu-icon-wrapper"><div class="menu-icon"><span></span></div></div>
             </div>
 		</div>
 	</header><!-- #masthead -->
