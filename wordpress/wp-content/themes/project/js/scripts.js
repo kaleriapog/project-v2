@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let mediaMobile = (window.innerWidth < 768)
 
     if(menuIcon) {
-        console.log(headerNavigation)
         menuIcon.addEventListener('click', () => {
             menuIcon.classList.toggle('open')
             headerNavigation.classList.toggle('open')

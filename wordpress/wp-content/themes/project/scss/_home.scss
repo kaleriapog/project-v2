@@ -208,11 +208,11 @@
     position: relative;
 
     @include media-height-830 {
-      max-width: 950px;
+      max-width: 140vh;
     }
 
     @include media-height-730 {
-      max-width: 110vh;
+      max-width: 130vh;
     }
 
     @include media-laptop {
@@ -314,6 +314,7 @@
         height: 34px;
         position: relative;
         opacity: 0;
+        cursor: pointer;
 
         &.active {
           opacity: 1;
