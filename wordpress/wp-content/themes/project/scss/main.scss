@@ -94,8 +94,8 @@ section {
   color: $colorButton;
 
   &:hover {
-    background-color: $colorButton;
-    border-color: $colorButton;
+    background-color: $colorMain;
+    border-color: $colorMain;
     color: $colorWhite;
     opacity: 1;
   }
