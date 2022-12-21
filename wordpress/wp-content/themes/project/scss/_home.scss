@@ -8,6 +8,16 @@
     margin-bottom: 75px;
   }
 
+  .headline__above-title {
+    @include media-mobile {
+      display: none;
+    }
+  }
+
+  .buttons_group {
+    display: none;
+  }
+
   &__title {
     font-size: 72px;
     font-weight: 700;
