@@ -57,6 +57,11 @@ section {
   line-height: 1.37;
   color:$colorButton;
   transition: $transitionMain;
+  text-align: center;
+
+  @include media-mobile {
+    width: 100%;
+  }
 
   &:hover {
     border-color: $colorButton;
@@ -125,6 +130,12 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 22px;
+
+  li {
+    @include media-mobile {
+      width: 100%;
+    }
+  }
 }
 
 //title
@@ -146,6 +157,10 @@ section {
   }
 
   @include media-mobile {
+    font-size: 16px;
+  }
+
+  @include media-mobile-small {
     font-size: 14px;
   }
 }
@@ -170,6 +185,7 @@ section {
 
   @include media-tablet {
     font-size: 38px;
+    line-height: 1.1;
   }
 
   @include media-height-desk-extra-low {
@@ -177,11 +193,11 @@ section {
   }
 
   @include media-mobile {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   @include media-mobile-small {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
@@ -197,11 +213,12 @@ section {
   }
 
   @include media-mobile {
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 1.2;
   }
 
   @include media-mobile-small {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
